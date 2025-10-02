@@ -233,7 +233,7 @@
       <button id="toggle-btn" onclick="toggleSidebar()">☰</button>
     </div>
     <div id="messages"></div>
-    <div id="typing-indicator">Pod 042 is typing...</div>
+    <div id="typing-indicator">Pod 042 is thinking...</div>
     <div id="input-area">
       <input type="text" id="user_input" placeholder="Type your message...">
       <button id="send-btn" onclick="sendMessage()">Send</button>
@@ -279,10 +279,54 @@
         botDiv.className = 'message bot';
         botDiv.innerHTML = `
           <div class="avatar"><img src="${botPfp}" alt="Pod-042"></div>
-          <div class="bubble">${data.reply}</div>
+          <div class="bubble"><span class="typewriter"></span></div>
         `;
         messages.appendChild(botDiv);
         messages.scrollTop = messages.scrollHeight;
+
+        // Typewriter effect
+        const typewriterElem = botDiv.querySelector('.typewriter');
+        const fullText = data.reply;
+        let i = 0;
+        let cursorState = true;
+        let cursorChar = '|';
+        let typingDone = false;
+
+        function updateCursor() {
+          if (!typingDone) {
+            cursorChar = cursorState ? '|' : '.';
+            cursorState = !cursorState;
+            typewriterElem.innerHTML = fullText.slice(0, i) + '<span class="nier-cursor">' + cursorChar + '</span>';
+          } else {
+            cursorChar = cursorState ? '|' : '.';
+            cursorState = !cursorState;
+            typewriterElem.innerHTML = fullText + '<span class="nier-cursor">' + cursorChar + '</span>';
+          }
+        }
+
+        let typeInterval = setInterval(() => {
+          if (i < fullText.length) {
+            typewriterElem.innerHTML = fullText.slice(0, i) + '<span class="nier-cursor">' + cursorChar + '</span>';
+            i++;
+          } else {
+            clearInterval(typeInterval);
+            typingDone = true;
+            // Remove cursor after typing is done
+            typewriterElem.innerHTML = fullText;
+          }
+    }, 16); // Smoother and faster typewriter speed
+
+    // Blinking cursor only while typing
+    let cursorInterval = setInterval(updateCursor, 250); // Faster blink for smoother look
+        function updateCursor() {
+          if (!typingDone) {
+            cursorChar = cursorState ? '|' : '.';
+            cursorState = !cursorState;
+            typewriterElem.innerHTML = fullText.slice(0, i) + '<span class="nier-cursor">' + cursorChar + '</span>';
+          } else {
+            clearInterval(cursorInterval);
+          }
+        }
       })
       .catch(() => typingIndicator.style.display = "none");
 
