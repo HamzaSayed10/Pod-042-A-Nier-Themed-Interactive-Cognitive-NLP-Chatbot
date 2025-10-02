@@ -1,0 +1,69 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening", "good afternoon", "yo", "sup", "hola", "hi there", "hello bot", "hey buddy"],
+      "responses": ["Hello! How are you today?", "Hey there! 🙂", "Hi! What’s up?", "Good to see you! 👋", "Hey! How can I help you today?"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "see ya", "talk later", "cya", "catch you later", "good night", "have a nice day", "farewell"],
+      "responses": ["Goodbye! Take care.", "See you later! 👋", "Bye! Come back soon.", "It was nice chatting with you.", "Take care, friend!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "thanks a lot", "thx", "cheers", "appreciate it", "thank u", "thankyou so much", "thanks bot"],
+      "responses": ["You're welcome! 😊", "No problem at all.", "Anytime!", "Glad I could help.", "Happy to assist!"]
+    },
+    {
+      "tag": "how_are_you",
+      "patterns": ["how are you", "how r u", "how are you doing", "how’s it going", "what's up", "how you doing", "how do you do", "are you okay"],
+      "responses": ["I'm doing great, thanks for asking! How about you?", "I’m just a bot, but I’m feeling chatty! 😄", "All good here. How are you doing?", "I’m fantastic, thanks for checking in!"]
+    },
+    {
+      "tag": "time",
+      "patterns": ["what time is it", "tell me the time", "current time", "time please"],
+      "responses": ["The time is: (system time here)", "Right now it’s (system time).", "It’s (system time) currently."]
+    },
+    {
+      "tag": "date",
+      "patterns": ["what day is it", "what's the date", "today’s date", "date please"],
+      "responses": ["Today is (system date).", "The date is: (system date)", "It’s (system date) today."]
+    },
+    {
+      "tag": "jokes",
+      "patterns": ["tell me a joke", "make me laugh", "joke please", "say something funny"],
+      "responses": ["Why did the computer go to the doctor? Because it caught a virus! 😂", "Why don’t scientists trust atoms? Because they make up everything!", "Parallel lines have so much in common… it’s a shame they’ll never meet.", "Why was the math book sad? It had too many problems.", "Why are elevator jokes so good? Because they work on so many levels."]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["what’s the weather", "is it hot today", "how’s the weather", "weather report", "is it raining"],
+      "responses": ["I can’t check live weather, but I hope it’s sunny ☀️", "Not sure, but don’t forget your umbrella just in case! ☔", "I’m guessing it’s nice outside 😄"]
+    },
+    {
+      "tag": "smalltalk",
+      "patterns": ["who made you", "who created you", "what can you do", "tell me about yourself", "do you like me", "do you have feelings", "are you real", "are you human"],
+      "responses": ["I was created by a programmer for a lab project! 👩‍💻", "I can chat, tell jokes, and answer simple questions.", "I don’t have feelings, but I enjoy talking with you!", "I’m not human, but I try my best to be friendly."]
+    },
+    {
+      "tag": "study_help",
+      "patterns": ["help me study", "i have an exam", "study tips", "how to focus", "how can i prepare", "any tips for exams"],
+      "responses": ["Break your study into chunks with short breaks.", "Stay hydrated and don’t forget to sleep well.", "Practice previous papers if you can.", "Keep calm—you’ve got this! 💪"]
+    },
+    {
+      "tag": "motivation",
+      "patterns": ["motivate me", "say something inspiring", "i feel sad", "cheer me up", "i’m bored", "i’m tired"],
+      "responses": ["Every expert was once a beginner. Keep going! 🌟", "You’re stronger than you think.", "Don’t stop until you’re proud.", "Your future self will thank you for the work you do today."]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "Sorry, I didn’t understand that.",
+        "Hmm 🤔 could you rephrase?",
+        "I’m not sure I got that. Try again.",
+        "That doesn’t seem familiar to me."
+      ]
+    }
+  ]
+}
